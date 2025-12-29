@@ -1,27 +1,98 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Swap</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="swap-card">
+        <h1 class="title">Swap</h1>
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fancy Form</title>
+        <!-- From Currency Section -->
+        <div class="currency-section">
+          <label class="section-label">You Pay</label>
+          <div class="input-group">
+            <div class="currency-selector">
+              <img id="from-token-icon" src="" alt="" class="token-icon" />
+              <select id="from-currency" class="currency-select">
+                <option value="">Select currency</option>
+              </select>
+            </div>
+            <div class="amount-input-wrapper">
+              <input
+                type="number"
+                id="input-amount"
+                class="amount-input"
+                placeholder="0.00"
+                step="0.00000001"
+                min="0" />
+              <span class="currency-code" id="from-currency-code"></span>
+            </div>
+          </div>
+          <div class="error-message" id="from-error"></div>
+        </div>
 
-  <!-- You may add more stuff here -->
-  <link href="style.css" rel="stylesheet" />
-</head>
+        <!-- Swap Button -->
+        <button
+          class="swap-button"
+          id="swap-currencies-btn"
+          type="button"
+          aria-label="Swap currencies">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M7 4L3 8L7 12"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M13 16L17 12L13 8"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
 
-<body>
+        <!-- To Currency Section -->
+        <div class="currency-section">
+          <label class="section-label">You Receive</label>
+          <div class="input-group">
+            <div class="currency-selector">
+              <img id="to-token-icon" src="" alt="" class="token-icon" />
+              <select id="to-currency" class="currency-select">
+                <option value="">Select currency</option>
+              </select>
+            </div>
+            <div class="amount-input-wrapper">
+              <input
+                type="number"
+                id="output-amount"
+                class="amount-input"
+                placeholder="0.00"
+                readonly />
+              <span class="currency-code" id="to-currency-code"></span>
+            </div>
+          </div>
+          <div class="error-message" id="to-error"></div>
+          <div class="exchange-rate" id="exchange-rate"></div>
+        </div>
 
-  <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <form onsubmit="return !1">
-    <h5>Swap</h5>
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          id="confirm-swap-btn"
+          class="confirm-button"
+          disabled>
+          <span id="button-text">CONFIRM SWAP</span>
+          <span id="button-loader" class="loader" style="display: none"></span>
+        </button>
+      </div>
+    </div>
 
-    <label for="output-amount">Amount to receive</label>
-    <input id="output-amount" />
-
-    <button>CONFIRM SWAP</button>
-  </form>
-  <script src="script.js"></script>
-</body>
-
+    <script type="module" src="script.js"></script>
+  </body>
 </html>

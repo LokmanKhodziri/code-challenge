@@ -1,8 +1,7 @@
-body {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  min-width: 360px;
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* Main stylesheet - imports all CSS modules */
+@import "./css/reset.css";
+@import "./css/layout.css";
+@import "./css/components.css";
+@import "./css/buttons.css";
+@import "./css/utilities.css";
+@import "./css/responsive.css";
